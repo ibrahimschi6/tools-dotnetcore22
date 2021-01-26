@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{624626DB-3A62-46E7-AEA8-1B8AE4A60E3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotnetCore22.Tools.ModelGenerator</RootNamespace>
+    <AssemblyName>DotnetCore22.Tools.ModelGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AdminAuthority.cs" />
+    <Compile Include="Models\AdminMenuItem.cs" />
+    <Compile Include="Models\AdminRole.cs" />
+    <Compile Include="Models\AdminUser.cs" />
+    <Compile Include="Models\AutherizationSource.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Buyer.cs" />
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\DailySalePrice.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\IkinciElMobilDBContext.cs" />
+    <Compile Include="Models\Listing.cs" />
+    <Compile Include="Models\ListingAccessoryOption.cs" />
+    <Compile Include="Models\ListingInspactationCycleResult.cs" />
+    <Compile Include="Models\ListingInspectationCheckItem.cs" />
+    <Compile Include="Models\ListingInspectationCycle.cs" />
+    <Compile Include="Models\ListingItemCondition.cs" />
+    <Compile Include="Models\ListingsComment.cs" />
+    <Compile Include="Models\ListingsPhoto.cs" />
+    <Compile Include="Models\ListingState.cs" />
+    <Compile Include="Models\ListingStateChange.cs" />
+    <Compile Include="Models\ListingValidationCheckItem.cs" />
+    <Compile Include="Models\ListingValidationCycle.cs" />
+    <Compile Include="Models\ListingValidationCycleResult.cs" />
+    <Compile Include="Models\Mapping\AdminAuthorityMap.cs" />
+    <Compile Include="Models\Mapping\AdminMenuItemMap.cs" />
+    <Compile Include="Models\Mapping\AdminRoleMap.cs" />
+    <Compile Include="Models\Mapping\AdminUserMap.cs" />
+    <Compile Include="Models\Mapping\AutherizationSourceMap.cs" />
+    <Compile Include="Models\Mapping\BrandMap.cs" />
+    <Compile Include="Models\Mapping\BuyerMap.cs" />
+    <Compile Include="Models\Mapping\CityMap.cs" />
+    <Compile Include="Models\Mapping\DailySalePriceMap.cs" />
+    <Compile Include="Models\Mapping\FeedbackMap.cs" />
+    <Compile Include="Models\Mapping\ListingAccessoryOptionMap.cs" />
+    <Compile Include="Models\Mapping\ListingInspactationCycleResultMap.cs" />
+    <Compile Include="Models\Mapping\ListingInspectationCheckItemMap.cs" />
+    <Compile Include="Models\Mapping\ListingInspectationCycleMap.cs" />
+    <Compile Include="Models\Mapping\ListingItemConditionMap.cs" />
+    <Compile Include="Models\Mapping\ListingMap.cs" />
+    <Compile Include="Models\Mapping\ListingsCommentMap.cs" />
+    <Compile Include="Models\Mapping\ListingsPhotoMap.cs" />
+    <Compile Include="Models\Mapping\ListingStateChangeMap.cs" />
+    <Compile Include="Models\Mapping\ListingStateMap.cs" />
+    <Compile Include="Models\Mapping\ListingValidationCheckItemMap.cs" />
+    <Compile Include="Models\Mapping\ListingValidationCycleMap.cs" />
+    <Compile Include="Models\Mapping\ListingValidationCycleResultMap.cs" />
+    <Compile Include="Models\Mapping\ModelColorOptionMap.cs" />
+    <Compile Include="Models\Mapping\ModelMap.cs" />
+    <Compile Include="Models\Mapping\ModelStorageOptionMap.cs" />
+    <Compile Include="Models\Mapping\OrderMap.cs" />
+    <Compile Include="Models\Mapping\OrderStateChangeMap.cs" />
+    <Compile Include="Models\Mapping\OrderStateMap.cs" />
+    <Compile Include="Models\Mapping\RecentSoldMap.cs" />
+    <Compile Include="Models\Mapping\SellerMap.cs" />
+    <Compile Include="Models\Mapping\UserMap.cs" />
+    <Compile Include="Models\Mapping\UsersBlockedListingMap.cs" />
+    <Compile Include="Models\Mapping\UsersFavoriteListingMap.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\ModelColorOption.cs" />
+    <Compile Include="Models\ModelStorageOption.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderState.cs" />
+    <Compile Include="Models\OrderStateChange.cs" />
+    <Compile Include="Models\RecentSold.cs" />
+    <Compile Include="Models\Seller.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UsersBlockedListing.cs" />
+    <Compile Include="Models\UsersFavoriteListing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
+    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,72 @@
+<#@ template hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude" #><#@
+ output extension=".cs" #><#
+
+    var efHost = (EfTextTemplateHost)Host;
+    var code = new CodeGenerationTools(this);
+#>
+
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using DotnetCore22.Domain.Model;
+using DotnetCore22.DataAccess.Mapping;
+
+namespace DotnetCore22.DataAccess
+{
+    public interface I<#= efHost.EntityContainer.Name #>
+    {
+   
+
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+        IDbSet<<#= set.ElementType.Name #>> <#= set.Name #> { get; set; }
+<#
+    }
+#>
+
+    }
+}
+
+namespace DotnetCore22.DataAccess
+{
+    public partial class <#= efHost.EntityContainer.Name #> : DbContext, I<#= efHost.EntityContainer.Name #>
+    {
+        static <#= efHost.EntityContainer.Name #>()
+        {
+            Database.SetInitializer<<#= efHost.EntityContainer.Name #>>(null);
+        }
+
+        public <#= efHost.EntityContainer.Name #>()
+            : base("Name=<#= efHost.EntityContainer.Name #>")
+        {
+        }
+
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+        public IDbSet<<#= set.ElementType.Name #>> <#= set.Name #> { get; set; }
+<#
+    }
+#>
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+            modelBuilder.Configurations.Add(new <#= set.ElementType.Name #>Map());
+<#
+    }
+#>
+        }
+    }
+}
+
+
+
+
+
